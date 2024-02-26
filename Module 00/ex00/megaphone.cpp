@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:54:02 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/02/26 20:02:26 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/02/26 20:06:07 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(int argc, char *argv[])
 {
 	if (argc <= 1)
-	std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
 	else
 	{
 		std::string str;
