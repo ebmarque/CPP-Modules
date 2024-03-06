@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:12:04 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/06 18:11:37 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/03/06 22:06:54 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 
 int PhoneBook::index = 0;
 
-std::string	_get_info(std::string text)
-{
-	std::string	input;
-	
-	while (input.empty())
+std::string _get_info(std::string text) {
+	std::string input;
+
+	while (true)
 	{
 		std::cout << CYAN << text << RESET;
 		std::getline(std::cin, input);
-		std::cout << std::endl;
-		if (std::cin.eof())
-			break ;
-		if (input.empty())
+		size_t start = input.find_first_not_of(" \t\r\n");
+		if (start == std::string::npos)
+		{
 			std::cout << RED << "ERROR: EMPTY FIELD.\n" << RESET;
+			continue ;
+		}
+		size_t end = input.find_last_not_of(" \t\r\n");
+		input = input.substr(start, end - start + 1);
+		break ;
 	}
-	std::cin.clear();
 	return (input);
 }
+
 void	PhoneBook::add(void)
 {
 	std::string	f_name;
@@ -43,37 +46,42 @@ void	PhoneBook::add(void)
 	n_name = _get_info("Insert the contact nick name: ");
 	d_secret = _get_info("Insert the contact darkest secret: ");
 	if (index < 7)
+	{
 		contacts[index] = Contact(f_name, l_name, n_name, d_secret);
+		index++;
+	}
 	else
 	{
 		contacts[index] = Contact(f_name, l_name, n_name, d_secret);
 		index = 0;
 	}
-	index++;
 }
 
-int	_get_num(void)
-{
-	int input;
-	input = 0;
-	while (input < 1 || input > 8)
+int	_get_num() {
+	int nbr;
+	std::string input_str;
+	while (true)
 	{
 		std::cout << "Insert the index of the contact you wish to display the information: ";
-		std::cin >> input;
+		std::getline(std::cin, input_str);
+		std::stringstream ss(input_str);
 		if (std::cin.eof())
+			exit(0);
+		if (!(ss >> nbr) || nbr < 1 || nbr > 8)
+			std::cout << RED 
+					  << "Invalid input. Please enter a valid index (1 - 8)."
+					  << RESET <<  std::endl;
+		else
 			break ;
-		if (input < 1 || input > 8)
-			std::cout << RED << "ERROR: Please insert a valid INDEX (1 - 8)\n" << RESET;
 	}
-	std::cin.clear();
-	return (input);
+	return nbr;
 }
 
 void	PhoneBook::search()
 {
 	int input;
-	std::cout << GREEN 
-			  << "INDEX     | First Name | Last Name  | Nick Name  | Darkest Secret\n" 
+	std::cout << GREEN << std::endl
+			  << "  INDEX   | First Name |  Last Name |  Nick Name |   Secret   |\n" 
 			  << RESET;
 	for (int i = 0; i < 8; i++)
 	{

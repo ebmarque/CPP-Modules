@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:11:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/06 15:12:32 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/03/06 21:03:34 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <iostream>
 # include <string>
 # include "Contact.hpp"
+# include <cstdlib>
+# include <limits>
+# include <sstream>
 
 #define RESET   "\033[0m"
 #define BLACK   "\033[30m"

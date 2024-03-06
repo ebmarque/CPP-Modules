@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:08:00 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/06 18:25:57 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/03/06 21:19:58 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,12 @@ void	_action(std::string input, PhoneBook &ppa)
 void _get_command(PhoneBook &ppa)
 {
 	std::string input;
-	int contador = 0;
 	while (1)
 	{
-		std::cout << "passagem :" << contador << std::endl;
 		std::cout << RED << "Command: " << RESET;
 		std::getline(std::cin, input);
 		if (std::cin.eof())
-			break;
+			exit(0);
 		if (!_is_valid_command(input))
 		{
 			std::cout << YELLOW << "Error: Invalid command"
@@ -60,8 +58,6 @@ void _get_command(PhoneBook &ppa)
 		else
 			_action(input, ppa);
 		std::cin.clear();
-		std::cout << "INPUT DE FORA: '" << input << "'" << std::endl;
-		contador++;
 	}
 }
 

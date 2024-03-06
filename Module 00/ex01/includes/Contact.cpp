@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:16:33 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/06 18:01:40 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/03/06 21:54:00 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,51 +28,36 @@ Contact::Contact()
 Contact::~Contact()
 {
 }
+void _contact_grid(std::string str)
+{
+	if (str.size() > 10)
+		std::cout << GREEN << str.substr(0, 9) << "." << RESET;
+	else
+	{
+		for (int i = 0; i < 10 - (int)str.size(); i++)
+			std::cout << " ";
+		std::cout << GREEN << str;
+	}
+		std::cout << GREEN << " | " << RESET;	
+}
+
 void Contact::display(int i)
 {
-	std::cout << GREEN << i << "         | " << RESET;
-	if (first_name.size() > 10)
-		std::cout << GREEN << first_name.substr(0, 8) << "." << RESET;
-	else
-	{
-		std::cout << GREEN << first_name;
-		for (int i = 0; i < 10 - (int)first_name.size(); i++)
-			std::cout << " ";
-		std::cout << GREEN << " | " << RESET;	
-	}
-	if (last_name.size() > 10)
-		std::cout << GREEN << last_name.substr(0, 8) << "." << RESET;
-	else
-	{
-		std::cout << GREEN << last_name;
-		for (int i = 0; i < 10 - (int)last_name.size(); i++)
-			std::cout << " ";
-		std::cout << GREEN << " | " << RESET;
-	}
-	if (nick_name.size() > 10)
-		std::cout << GREEN << nick_name.substr(0, 8) << "." << RESET;
-	else 
-	{
-		std::cout << GREEN << nick_name;
-		for (int i = 0; i < 10 - (int)nick_name.size(); i++)
-			std::cout << " ";
-		std::cout << GREEN << " | " << RESET;
-	}
-	if (darkest_secret.size() > 10)
-		std::cout << GREEN << darkest_secret.substr(0, 8) << "." << RESET;
-	else 
-	{
-		std::cout << GREEN << darkest_secret << RESET;
-		for (int i = 0; i < 10 - (int)darkest_secret.size(); i++)
-			std::cout << " ";
-	}
+	std::cout << GREEN << "    " << i << "     | " << RESET;
+	_contact_grid(first_name);
+	_contact_grid(last_name);
+	_contact_grid(nick_name);
+	_contact_grid(darkest_secret);
+	
 	std::cout << std::endl;
 }
 
 void	Contact::show()
 {
-	std::cout << BLUE << first_name << std::endl;
-	std::cout << BLUE << last_name << std::endl;
-	std::cout << BLUE << nick_name << std::endl;
-	std::cout << BLUE << darkest_secret << std::endl << std::endl;
+	std::cout << BLUE << "\n\nFirst name: " << RESET << first_name << std::endl;
+	std::cout << BLUE << "Last name: " << RESET << last_name << std::endl;
+	std::cout << BLUE << "Nick name: " << RESET << nick_name << std::endl;
+	std::cout << YELLOW 
+	<< "Darkest secret: " << RESET << darkest_secret << std::endl << std::endl;
+
 }
