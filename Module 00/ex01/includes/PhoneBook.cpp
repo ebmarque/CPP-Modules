@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:12:04 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/06 22:06:54 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/03/06 22:26:55 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ std::string _get_info(std::string text) {
 	{
 		std::cout << CYAN << text << RESET;
 		std::getline(std::cin, input);
+		if (std::cin.eof())
+			exit(0);
 		size_t start = input.find_first_not_of(" \t\r\n");
 		if (start == std::string::npos)
 		{

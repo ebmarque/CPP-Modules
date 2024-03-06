@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:08:00 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/06 21:19:58 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/03/06 22:27:23 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ void	_action(std::string input, PhoneBook &ppa)
 		exit(0);
 	}
 }
+void _trim(std::string &input)
+{
+	size_t start = input.find_first_not_of(" \t\r\n");
+	if (start == std::string::npos)
+		return ;
+	size_t end = input.find_last_not_of(" \t\r\n");
+	input = input.substr(start, end - start + 1);
+	for (size_t i = 0; i < input.size(); i++)
+		input[i] = (char)toupper(input[i]);
+}
 
 void _get_command(PhoneBook &ppa)
 {
@@ -50,6 +60,7 @@ void _get_command(PhoneBook &ppa)
 		std::getline(std::cin, input);
 		if (std::cin.eof())
 			exit(0);
+		_trim(input);
 		if (!_is_valid_command(input))
 		{
 			std::cout << YELLOW << "Error: Invalid command"
