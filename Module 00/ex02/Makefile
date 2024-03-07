@@ -6,17 +6,17 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/06 22:34:16 by ebmarque          #+#    #+#              #
-#    Updated: 2024/03/06 22:34:26 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/03/07 07:58:03 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = bank
 
 CC = c++
 
 CFLAGS = -Wall -Werror -Wextra -std=c++98
 
-SRC = megaphone.cpp
+SRC = Account.cpp tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
