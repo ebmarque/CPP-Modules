@@ -5,28 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 11:31:36 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/07 17:39:34 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/03/12 16:09:02 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/03/12 17:46:48 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANB_HPP
+#ifndef HUMANB_H
+#define HUMANB_H
 
 #include "Weapon.hpp"
-# include <string>
-# include <iostream>
 
 class HumanB
 {
 private:
 	std::string name;
-	Weapon	gun;
+	Weapon *gun;	
 public:
-	HumanB(std::string n_name);
+	HumanB(std::string new_name);
 	~HumanB();
-	void	attack(void);
-	void	setWeapon(Weapon &n_gun);
+	void	attack();
+	void	setWeapon(Weapon &new_gun);
 };
+
 
 #endif
