@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:59:09 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 18:33:37 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/12 18:46:28 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,9 @@ ScavTrap::ScavTrap(std::string n) : ClapTrap(n)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "< ScavTrap > - " << this->name 
+	std::cout << "[ScavTrap]: " << this->name 
 			  << " is now in Gate keeper mode." 
+			  << std::endl
 			  << std::endl;
 }
 
