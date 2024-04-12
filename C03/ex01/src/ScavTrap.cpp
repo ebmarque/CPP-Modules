@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:59:09 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/11 14:24:54 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/12 18:33:37 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,25 @@ void ScavTrap::guardGate()
 	std::cout << "< ScavTrap > - " << this->name 
 			  << " is now in Gate keeper mode." 
 			  << std::endl;
+}
+
+void	ScavTrap::attack(const std::string &target)
+{
+	if (this->health == 0)
+	{
+		std::cout << "[ScavTrap]: " << this->name 
+				  << " is dead" << std::endl << std::endl;
+	}
+	else if (this->energy > 0)
+	{
+		std::cout << "[ScavTrap]: " << this->name
+				<< " attacks " << target << ", causing "
+				<< this->attack_damage << " point(s) of damage!"
+				<< std::endl << std::endl;
+		this->energy--;
+	}
+	else {
+		std::cout << "[ScavTrap]: " << this->name << " has no energy points left!" 
+				  << std::endl << std::endl;	
+	}
 }

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/07 09:43:37 by ebmarque          #+#    #+#              #
-#    Updated: 2024/03/13 17:51:37 by ebmarque         ###   ########.fr        #
+#    Created: 2024/03/12 17:52:44 by ebmarque          #+#    #+#              #
+#    Updated: 2024/03/12 17:53:10 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = brainz
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = src/main.cpp includes/HumanA.cpp includes/HumanB.cpp includes/Weapon.cpp
+SRC = 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:43:20 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/11 14:35:57 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/12 18:34:56 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string n);
 		~ScavTrap();
 		void	guardGate(void);
+		void attack(const std::string &target);
+
 };
 
 #endif

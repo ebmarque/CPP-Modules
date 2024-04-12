@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/12 12:53:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 18:37:17 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/03/12 17:54:48 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/03/13 14:09:02 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#ifndef FILE_H
+#define FILE_H
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include <iostream>
+# include <string>
 
-
-class DiamondTrap : public ScavTrap, public FragTrap
+typedef std::string str;
+class File
 {
-	private:
-		std::string name;
-		
-	public:
-		DiamondTrap(std::string n);
-		~DiamondTrap();
-		void whoAmI(void);
+private:
+	str name;
+	str arg_1;
+	str arg_2;
+	int	fd;	
+public:
+	File();
+	File(str n, str a_1, str a_2);
+	~File();
+	int	open();
+	void	replace();
 };
 
 #endif
