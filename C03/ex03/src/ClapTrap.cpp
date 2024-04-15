@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:58:30 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 15:41:16 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/13 17:16:09 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	if (this->energy > 0 && this->health > 0)
 	{
 		std::cout /* << "ClapTrap " */ << this->name
-				<< " repairs itself " << amount << " points of health back!"
+				<< " repairs itself " << amount << " health points!"
 				<< std::endl << std::endl;
 		this->health += amount;
 		this->energy--;

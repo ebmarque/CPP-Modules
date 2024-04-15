@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 13:43:20 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 18:35:16 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:07:41 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-		ScavTrap();
-	
-	public:
-		ScavTrap(std::string n);
-		~ScavTrap();
-		void guardGate(void);
-		void attack(const std::string &target);
 
+public:
+	ScavTrap();
+	~ScavTrap();
+	ScavTrap(std::string n);
+	ScavTrap(const ScavTrap &ref);
+	ScavTrap &operator=(const ScavTrap &ref);
+	void guardGate(void);
+	void attack(const std::string &target);
 };
 
 #endif

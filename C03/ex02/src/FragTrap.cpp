@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:52:24 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 12:12:31 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:33:27 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,19 @@
 FragTrap::FragTrap()
 {
 	std::cout << "[FRAGTRAP] : DEFAULT CONSTRUCTOR USED!" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap& ref) : ClapTrap(ref)
+{
+	std::cout << "[FragTrap]: Copy constructor called." << std::endl;
+}
+
+FragTrap& FragTrap::operator=(const FragTrap& ref)
+{
+	std::cout << "[FragTrap]: Copy assignment operator called." << std::endl;
+	if (this != &ref)
+		this->name = ref.name;
+	return (*this);
 }
 
 FragTrap::~FragTrap()

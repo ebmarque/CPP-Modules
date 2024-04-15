@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:53:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 18:37:17 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:08:40 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		std::string name;
 		
 	public:
+		DiamondTrap();
+		DiamondTrap(const DiamondTrap& ref);
+		DiamondTrap& operator=(const DiamondTrap& ref);
 		DiamondTrap(std::string n);
 		~DiamondTrap();
 		void whoAmI(void);

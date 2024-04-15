@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 11:48:55 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/12 12:09:13 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/15 14:06:59 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class FragTrap : public ClapTrap
 {
-	private:
-		FragTrap();
-		
 	public:
-		FragTrap(std::string n);
+		FragTrap();
 		~FragTrap();
+		FragTrap(const FragTrap& ref);
+		FragTrap& operator=(const FragTrap& ref);
+		FragTrap(std::string n);
 		void highFivesGuys(void);
 };
 
