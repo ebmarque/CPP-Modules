@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/07 08:52:58 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/03/07 10:22:11 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/02/26 17:54:02 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/02/26 20:06:07 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Zombie.hpp"
+#include <iostream>
+#include <string>
 
-Zombie* newZombie(std::string name)
+int main(int argc, char *argv[])
 {
-	Zombie *fresh_zombie = new Zombie(name);
-	return (fresh_zombie);
+	if (argc <= 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+	else
+	{
+		std::string str;
+		for (int i = 1; i < argc; i++)
+		{
+			str = argv[i];
+			for (unsigned long j = 0; j < str.size(); j++)
+				std::cout << (char)toupper(str[j]);
+		}
+		std::cout << std::endl;
+	}
+	return 0;
 }
-
-void randomChump(std::string name)
-{
-	Zombie *random = newZombie(name);
-	random->announce();
-	delete random;
-}
-
-int main(void)
-{
-	randomChump("Foo");
-	
-	return (0);
-}
-
 

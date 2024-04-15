@@ -5,16 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/07 10:24:49 by ebmarque          #+#    #+#              #
-#    Updated: 2024/03/07 10:24:50 by ebmarque         ###   ########.fr        #
+#    Created: 2024/03/06 22:34:16 by ebmarque          #+#    #+#              #
+#    Updated: 2024/03/07 07:58:03 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = bank
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = src/main.cpp includes/Zombie.cpp
+
+CFLAGS = -Wall -Werror -Wextra -std=c++98
+
+SRC = Account.cpp tests.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -26,11 +29,9 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -fr $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -fr $(NAME)
 
 re: fclean all
-
-.PHONY: all clean fclean re

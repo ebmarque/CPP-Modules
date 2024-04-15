@@ -5,16 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/07 09:43:37 by ebmarque          #+#    #+#              #
-#    Updated: 2024/03/13 17:51:37 by ebmarque         ###   ########.fr        #
+#    Created: 2024/02/26 17:53:52 by ebmarque          #+#    #+#              #
+#    Updated: 2024/02/26 18:20:10 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = megaphone
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = src/main.cpp includes/HumanA.cpp includes/HumanB.cpp includes/Weapon.cpp
+
+CFLAGS = -Wall -Werror -Wextra -std=c++98
+
+SRC = megaphone.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -26,10 +29,10 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -fr $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -fr $(NAME)
 
 re: fclean all
 

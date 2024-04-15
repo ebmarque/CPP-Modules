@@ -5,16 +5,19 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/07 09:43:37 by ebmarque          #+#    #+#              #
-#    Updated: 2024/03/07 09:59:11 by ebmarque         ###   ########.fr        #
+#    Created: 2024/03/06 14:09:18 by ebmarque          #+#    #+#              #
+#    Updated: 2024/03/06 14:40:12 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = ppa
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = src/main.cpp includes/Zombie.cpp
+
+CFLAGS = -Wall -Werror -Wextra -std=c++98
+
+SRC = src/ppa.cpp includes/PhoneBook.cpp includes/Contact.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -26,10 +29,10 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -fr $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -fr $(NAME)
 
 re: fclean all
 
