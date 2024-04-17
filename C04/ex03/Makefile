@@ -5,39 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/17 15:01:11 by ebmarque          #+#    #+#              #
-#    Updated: 2024/04/17 19:51:48 by ebmarque         ###   ########.fr        #
+#    Created: 2024/04/17 20:44:02 by ebmarque          #+#    #+#              #
+#    Updated: 2024/04/17 20:48:25 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = interfaces
 CC = c++
-FLAGS = -Wall -Wextra -Werror -g -std=c++98
+CFLAGS = -Wall -Werror -Wextra -g -std:c++98
 
-SRC = 	src/Animal.cpp \
-		src/Cat.cpp \
-		src/main.cpp \
-		src/Dog.cpp \
-		src/WrongAnimal.cpp \
-		src/WrongCat.cpp
+INC = 
+SRCS =
+OBJS = (SRCS:.cpp=.o)
 
-OBJ = $(SRC:.cpp=.o)
+all : $(NAME)
 
-
-all: $(NAME)
-
-$(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME) : $(OBJS) $(INC)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $< -o $@
 
-clean:
-	rm -f $(OBJ)
+clean :
+	rm -fr $(OBJS)
 
-fclean: clean
+fclean : clean
 	rm -fr $(NAME)
 
-re: fclean all
+re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re

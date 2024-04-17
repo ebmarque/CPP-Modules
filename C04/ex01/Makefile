@@ -6,7 +6,7 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 15:01:11 by ebmarque          #+#    #+#              #
-#    Updated: 2024/04/17 19:51:48 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/04/17 20:07:23 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRC = 	src/Animal.cpp \
 		src/main.cpp \
 		src/Dog.cpp \
 		src/WrongAnimal.cpp \
-		src/WrongCat.cpp
+		src/WrongCat.cpp \
+		src/Brain.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

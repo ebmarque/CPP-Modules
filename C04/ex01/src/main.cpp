@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:59:07 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/17 19:32:17 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/17 20:06:36 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,24 @@
 #include "../includes/Dog.hpp"
 #include "../includes/WrongCat.hpp"
 
+
 int main( void )
 {
-    std::cout << "--------------- Animal ---------------" << std::endl;
-
-    const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << "J Type: " << j->getType() << " " << std::endl;
-    std::cout << "I Type: " << i->getType() << " " << std::endl;
-    i->makeSound();
-    meta->makeSound();
+    delete j;//should not create a leak
+    delete i;
 
-    delete  meta;
-    delete  j;
-    delete  i;
+    Dog basic;
+    {
+        Dog tmp = basic;
+    }
 
-    std::cout << std::endl << "------------- Wrong Animal -------------" << std::endl;
-
-    const WrongAnimal *wrong = new WrongAnimal();
-    const WrongAnimal *wrongCat = new WrongCat();
-
-    std::cout << "Wrong Type: " << wrong->getType() << " " << std::endl;
-    std::cout << "WrongCat Type: " << wrongCat->getType() << " " << std::endl;
-    wrong->makeSound();
-    wrongCat->makeSound();
-
-    delete  wrong;
-    delete  wrongCat;
+    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+    for ( int i = 0; i < 4; i++ ) {
+        delete animals[i];
+    }
 
     return 0;
 }
