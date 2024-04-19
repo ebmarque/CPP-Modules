@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:50:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/17 21:08:50 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/18 14:13:05 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class AMateria
 		std::string type;
 	public:
 		AMateria();
-		AMateria(std::string coonst &t);
+		AMateria(std::string const &t);
 		AMateria(const AMateria& ref);
 		AMateria& operator=(const AMateria& ref);
 		~AMateria();
@@ -52,5 +52,6 @@ class AMateria
 		virtual void use(ICharacter &target);	
 };
 
+void print(std::string text, std::string COLOR);
 
 #endif

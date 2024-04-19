@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 20:56:40 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/18 14:35:13 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/04/18 15:53:06 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/04/18 16:04:22 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cure : public AMateria
+class Character : public ICharacter
 {
+	private:
+		AMateria *materials[10];
 	public:
-		Cure();
-		Cure(const Cure& ref);
-		Cure& operator=(const Cure& ref);
-		~Cure();
+		Character();
+		Character(const Character& ref);
+		Character& operator=(const Character& ref);
+		~Character();
 };
 
 #endif

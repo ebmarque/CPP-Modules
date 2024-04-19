@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 20:56:40 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/18 14:35:13 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/04/18 14:40:14 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/04/18 14:40:51 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#include "../includes/AMateria.hpp"
+#include "../includes/Ice.hpp"
+#include "../includes/Cure.hpp"
 
-#include "AMateria.hpp"
-
-class Cure : public AMateria
+int main(void)
 {
-	public:
-		Cure();
-		Cure(const Cure& ref);
-		Cure& operator=(const Cure& ref);
-		~Cure();
-};
+	
 
-#endif
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:58:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/17 21:08:16 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/18 15:52:01 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,16 @@ AMateria::AMateria(std::string const &t)
 	this->type = t;
 }
 
-AMateria::AMateria(const AMateria& ref)
+AMateria::AMateria(const AMateria &ref)
 {
 	print("[AMateria]: Copy constructor called.", BRIGHT_GREEN);
 	*this = ref;
 }
 
-AMateria& AMateria::operator=(const AMateria& ref)
+AMateria &AMateria::operator=(const AMateria &ref)
 {
 	print("[AMateria]: Copy assignment operator called.", BRIGHT_GREEN);
 	if (this != &ref)
 		this->type = ref.type;
 	return (*this);
 }
-
-
-
-
-
-
