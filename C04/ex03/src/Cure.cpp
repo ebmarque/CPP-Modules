@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:35:30 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/18 15:52:26 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:22:32 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,15 @@ Cure &Cure::operator=(const Cure &ref)
 	if (this != &ref)
 		this->type = ref.type;
 	return (*this);
+}
+
+AMateria* Cure::clone(void) const
+{
+	print("[CURE]: 'clone' Method called.", BRIGHT_GREEN);
+	return (new Cure(*this));
+}
+
+void	Cure::use(ICharacter& target)
+{
+	print("[CURE]: * heals " + target.getName() + "'s wounds *", BRIGHT_CYAN);
 }

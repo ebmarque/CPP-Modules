@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:50:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/18 14:13:05 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:08:33 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include "ICharacter.hpp"
 
 # define RESET "\033[0m"
 # define BLACK "\033[30m"
@@ -46,8 +47,10 @@ class AMateria
 		AMateria(std::string const &t);
 		AMateria(const AMateria& ref);
 		AMateria& operator=(const AMateria& ref);
-		~AMateria();
+
+
 		std::string const &getType(void) const;
+		virtual ~AMateria();
 		virtual AMateria* clone(void) const = 0;
 		virtual void use(ICharacter &target);	
 };

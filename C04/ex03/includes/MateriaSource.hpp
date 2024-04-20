@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 20:56:40 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 08:23:32 by ebmarque         ###   ########.fr       */
+/*   Created: 2024/04/19 11:06:31 by ebmarque          #+#    #+#             */
+/*   Updated: 2024/04/20 14:19:49 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP
-#define CURE_HPP
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
-#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Cure : public AMateria
+class MateriaSource : public IMateriaSource
 {
-	public:
-		~Cure();
-		Cure();
-		Cure(const Cure& ref);
-		Cure& operator=(const Cure& ref);
+	protected:
+		AMateria *materials[4];
 
-		AMateria* clone(void) const override;
-		void use(ICharacter &target) override;
+	public:
+		MateriaSource();
+		MateriaSource(const MateriaSource &ref);
+		MateriaSource &operator=(const MateriaSource &ref);
+		~MateriaSource();
+
+		void learnMateria(AMateria *) override;
+		AMateria *createMateria(std::string const &type) override;
 };
 
 #endif

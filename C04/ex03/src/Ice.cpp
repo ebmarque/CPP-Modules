@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:11:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/18 14:39:09 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:23:10 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,17 @@ Ice& Ice::operator=(const Ice& ref)
 	return (*this);
 }
 
+
+
+
+AMateria* Ice::clone(void) const
+{
+	print("[ICE]: 'clone' Method called.", BRIGHT_CYAN);
+	return (new Ice(*this));
+}
+
+void	Ice::use(ICharacter& target)
+{
+	print("[ICE]: * shoots an ice bolt at  " + target.getName() + " *", BRIGHT_CYAN);
+}
 

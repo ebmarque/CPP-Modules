@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:55:27 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/18 14:35:23 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/19 08:19:36 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ class Ice : public AMateria
 		Ice(const Ice& ref);
 		Ice& operator=(const Ice& ref);
 		~Ice();
+
+		AMateria* clone(void) const override;
+		void use(ICharacter &target) override;
 };
 
 #endif
