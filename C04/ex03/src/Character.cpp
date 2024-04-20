@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:11:26 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 08:41:07 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:46:58 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,13 @@ Character::Character(std::string n)
 
 void Character::equip(AMateria* m)
 {
+	print("[" + this->name + "]: 'equip' member function called.", RED);
     for (int i = 0; i < 4; i++)
     {
         if(this->materials[i] == NULL && m != NULL)
         {
             this->materials[i] = m;
+			print("[" + this->name + "]: Equiped -> " + m->getType() + ".", RED);
             return ; 
         }
     }
@@ -62,11 +64,13 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int idx)
 {
+	print("[" + this->name + "]: 'unequip' member function called.", RED);
     this->materials[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter& target)
 {
+	print("[" + this->name + "]: 'use' member function called.", RED);
     if(this->materials[idx])
         this->materials[idx]->use(target);
 }

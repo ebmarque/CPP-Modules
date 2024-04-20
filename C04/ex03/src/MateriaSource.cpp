@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:15:51 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 14:37:06 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:44:06 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,27 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& ref)
 	return (*this);
 }
 
+void	MateriaSource::learnMateria(AMateria *ref)
+{
+	print("[MATERIASOURCE]: 'learnMAteria' mmember function called.", BLUE);
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (this->materials[i] == NULL)
+		{
+			this->materials[i] = ref->clone();
+			return ;
+		}
+	}
+}
+
+AMateria * MateriaSource::createMateria(std::string const &type)
+{
+	print("[MATERIASOURCE]: createMateria mmember function called.", BLUE);
+	for (int i = 0; i < 4; i++)
+    {
+        if(this->materials[i] && this->materials[i]->getType() == type)
+            return (materials[i]->clone());
+    }
+    return (0);
+}
 
