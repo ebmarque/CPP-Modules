@@ -6,41 +6,45 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 20:44:02 by ebmarque          #+#    #+#              #
-#    Updated: 2024/04/18 15:47:16 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/04/20 15:44:11 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = interfaces
 CC = c++
-CFLAGS = -Wall -Werror -Wextra -g -std:c++98
+CFLAGS = -Wall -Werror -Wextra -g -std=c++98
 
 INC = 	includes/AMateria.hpp \
 		includes/Cure.hpp \
 		includes/Ice.hpp \
 		includes/ICharacter.hpp \
+		includes/Character.hpp \
+		includes/IMateriaSource.hpp \
+		includes/MateriaSource.hpp 
 
-SRCS = 	src/AMateria.cpp \
-		src/Ice.cpp \
+SRCS = 	src/Ice.cpp \
+		src/AMateria.cpp \
 		src/Cure.cpp \
-		src/main.cpp \
-		src/ICharacter.cpp \
+		src/Character.cpp \
+		src/MateriaSource.cpp \
+		src/main.cpp
 
-OBJS = (SRCS:.cpp=.o)
+OBJS = $(SRCS:.cpp=.o)
 
-all : $(NAME)
+all: $(NAME)
 
-$(NAME) : $(OBJS) $(INC)
+$(NAME): $(OBJS) $(INC)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-clean :
+clean:
 	rm -fr $(OBJS)
 
-fclean : clean
+fclean: clean
 	rm -fr $(NAME)
 
-re : fclean all
+re: fclean all
 
 .PHONY : all clean fclean re

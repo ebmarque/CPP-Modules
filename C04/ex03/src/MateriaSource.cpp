@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:15:51 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 14:44:06 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:39:57 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,7 @@ MateriaSource::MateriaSource(void)
 MateriaSource::MateriaSource(const MateriaSource& ref)
 {
 	print("[MATERIASOURCE]: Copy constructor called.", BLUE);
-	for (size_t i = 0; i < 4; i++)
-	{
-		if (ref.materials[i] != NULL)
-			this->materials[i] = ref.materials[i]->clone();
-		else
-			this->materials[i] = NULL;
-	}
+	*this = ref;
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& ref)
@@ -48,15 +42,15 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& ref)
 	print("[MATERIASOURCE]: Copy assignment operator called.", BLUE);
 	if (this != &ref)
 	{
-		for (int i = 0; i < 4; i++)
+/* 		for (int i = 0; i < 4; i++)
 		{
 			if (this->materials[i])
 				delete this->materials[i];
-		}
+		} */
 		for (size_t i = 0; i < 4; i++)
 		{
 			if (ref.materials[i] != NULL)
-				this->materials[i] = ref.materials[i]->clone();
+				this->materials[i] = ref.materials[i];
 			else
 				this->materials[i] = NULL;
 		}
@@ -71,7 +65,7 @@ void	MateriaSource::learnMateria(AMateria *ref)
 	{
 		if (this->materials[i] == NULL)
 		{
-			this->materials[i] = ref->clone();
+			this->materials[i] = ref;
 			return ;
 		}
 	}

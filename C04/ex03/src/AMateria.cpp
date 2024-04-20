@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:58:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 08:11:29 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:55:36 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ AMateria &AMateria::operator=(const AMateria &ref)
 	return (*this);
 }
 
-std::string AMateria::getType(void) const
+std::string const &AMateria::getType(void) const
 {
 	return (this->type);
 }
@@ -56,5 +56,6 @@ std::string AMateria::getType(void) const
 void AMateria::use(ICharacter &target)
 {
 	print("[AMateria]: 'use' Method called.", BRIGHT_GREEN);
+	(void)target;
 }
 

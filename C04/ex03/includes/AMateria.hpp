@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:50:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 11:08:33 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:32:54 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define BRIGHT_CYAN "\033[96m"
 # define BRIGHT_WHITE "\033[97m"
 
+class ICharacter;
 class AMateria
 {
 	protected:
@@ -50,9 +51,9 @@ class AMateria
 
 
 		std::string const &getType(void) const;
-		virtual ~AMateria();
 		virtual AMateria* clone(void) const = 0;
 		virtual void use(ICharacter &target);	
+		virtual ~AMateria();
 };
 
 void print(std::string text, std::string COLOR);

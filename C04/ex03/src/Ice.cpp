@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:11:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 08:23:10 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:31:06 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ Ice& Ice::operator=(const Ice& ref)
 		this->type = ref.type;
 	return (*this);
 }
-
-
 
 
 AMateria* Ice::clone(void) const

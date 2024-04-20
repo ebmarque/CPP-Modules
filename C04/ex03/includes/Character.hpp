@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:53:06 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 08:35:11 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/20 15:43:17 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class Character : public ICharacter
 {
 	private:
+		std::string name;
 		AMateria *materials[4];
 
 	public:
@@ -29,10 +30,10 @@ class Character : public ICharacter
 
 		/*----------------- OVERRIDED FUNCTIONS ------------------*/
 		
-		void equip(AMateria *m) override;
-		void unequip(int idx) override;
-		std::string const &getName() const override;
-		void use(int idx, ICharacter &target) override;
+		void equip(AMateria *m);
+		void unequip(int idx);
+		std::string const &getName() const;
+		void use(int idx, ICharacter &target);
 };
 
 #endif
