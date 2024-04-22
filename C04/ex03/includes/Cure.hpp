@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:56:40 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 15:33:37 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:38:35 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class Cure : public AMateria
 		Cure(const Cure& ref);
 		Cure& operator=(const Cure& ref);
 
-		AMateria* clone(void) const;
-		void use(ICharacter &target);
+		virtual AMateria* clone(void) const;
+		virtual void use(ICharacter &target);
 };
 
 #endif

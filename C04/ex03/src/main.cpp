@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:14 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 16:55:51 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:21:49 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,6 @@
 #include "../includes/ICharacter.hpp"
 #include <iomanip>
 
-
-/* int main(void)
-{
-	IMateriaSource* src = new MateriaSource();
-	
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	ICharacter* me = new Character("me");
-
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-
-	ICharacter* bob = new Character("bob");
-	me->use(0, *bob);
-	me->use(1, *bob);
-
-	delete bob;
-	delete me;
-	delete src;
-	
-	return (0);
-} */
 
 void	titleHeader(const std::string& message)
 {

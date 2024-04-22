@@ -6,16 +6,12 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:50:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 16:32:54 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 13:34:07 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 #define AMATERIA_HPP
-
-#include <iostream>
-#include <string>
-#include "ICharacter.hpp"
 
 # define RESET "\033[0m"
 # define BLACK "\033[30m"
@@ -37,6 +33,10 @@
 # define BRIGHT_MAGENTA "\033[95m"
 # define BRIGHT_CYAN "\033[96m"
 # define BRIGHT_WHITE "\033[97m"
+
+#include <iostream>
+#include <string>
+#include "ICharacter.hpp"
 
 class ICharacter;
 class AMateria

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:11:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 16:31:06 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:00:45 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Ice::~Ice()
 {
-	print("[ICE]: Deleted.", BRIGHT_CYAN);
+	print("[ICE]: Deleted.", RED);
 }
 
 Ice::Ice() : AMateria("ice")

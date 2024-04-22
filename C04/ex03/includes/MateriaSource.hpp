@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 11:06:31 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 15:33:48 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:52:55 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class MateriaSource : public IMateriaSource
 		MateriaSource &operator=(const MateriaSource &ref);
 		~MateriaSource();
 
-		void learnMateria(AMateria *);
-		AMateria *createMateria(std::string const &type);
+		void		learnMateria(AMateria *);
+		AMateria	*createMateria(std::string const &type);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:35:30 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/19 08:22:32 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:00:51 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cure::~Cure()
 {
-	print("[CURE]: Deleted.", BRIGHT_GREEN);
+	print("[CURE]: Deleted.", RED);
 }
 
 Cure::Cure(void) : AMateria("cure")

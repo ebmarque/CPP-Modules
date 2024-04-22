@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:58:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/20 14:55:36 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 14:00:25 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,14 @@ void print(std::string text, std::string COLOR)
 
 AMateria::~AMateria()
 {
-	print("[AMateria]: Deleted.", BRIGHT_GREEN);
+	print("[AMateria]: Deleted.", RED);
 }
 
 AMateria::AMateria()
 {
-	print("[AMateria]: Default constructor called.", BRIGHT_GREEN);
 	this->type = "Undefined";
+	print("[AMateria]: Default constructor called: created -> " + \
+		type + ".", BRIGHT_GREEN);
 }
 
 AMateria::AMateria(std::string const &t)
@@ -43,8 +44,7 @@ AMateria::AMateria(const AMateria &ref)
 AMateria &AMateria::operator=(const AMateria &ref)
 {
 	print("[AMateria]: Copy assignment operator called.", BRIGHT_GREEN);
-	if (this != &ref)
-		this->type = ref.type;
+	(void)ref;
 	return (*this);
 }
 
