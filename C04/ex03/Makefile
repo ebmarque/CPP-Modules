@@ -6,7 +6,7 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/17 20:44:02 by ebmarque          #+#    #+#              #
-#    Updated: 2024/04/20 15:44:11 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/04/22 18:07:57 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,15 @@ INC = 	includes/AMateria.hpp \
 		includes/ICharacter.hpp \
 		includes/Character.hpp \
 		includes/IMateriaSource.hpp \
-		includes/MateriaSource.hpp 
+		includes/MateriaSource.hpp \
+		includes/Floor.hpp 
 
 SRCS = 	src/Ice.cpp \
 		src/AMateria.cpp \
 		src/Cure.cpp \
 		src/Character.cpp \
 		src/MateriaSource.cpp \
+		src/Floor.cpp \
 		src/main.cpp
 
 OBJS = $(SRCS:.cpp=.o)

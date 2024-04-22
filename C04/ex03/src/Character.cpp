@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:11:26 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 14:09:45 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:36:50 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,21 @@ void Character::equip(AMateria *m)
 			return;
 		}
 	}
-	print("[" + this->name + "]: Could not equip.", YELLOW);
+	if (m != NULL)
+	{
+		print("[" + this->name + "]: Could not equip " + m->getType() + ".", YELLOW);
+		Floor::dropMateria(m);
+	}
 }
 
 void Character::unequip(int idx)
 {
-	print("[" + this->name + "]: 'unequip' member function called.", YELLOW);
-	this->inventory[idx] = NULL;
+	if (this->inventory[idx] != NULL)
+	{
+		print("[" + this->name + "]: Drops " + this->inventory[idx]->getType() + ".", YELLOW);
+		Floor::dropMateria(this->inventory[idx]);
+		this->inventory[idx] = NULL;	
+	}
 }
 
 void Character::use(int idx, ICharacter &target)

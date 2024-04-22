@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 15:53:06 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 13:41:16 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:52:35 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "Floor.hpp"
 
 class Character : public ICharacter
 {

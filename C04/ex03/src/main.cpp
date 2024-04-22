@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:14 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 14:21:49 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:33:19 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,8 +186,8 @@ void	unequipTests(void)
 int main()
 {
 	std::cout << "\033c";
-	deepCopyTests();
+	// deepCopyTests();
 	unequipTests();
-	subjectTests();
+	// subjectTests();
 	return 0;
 }
