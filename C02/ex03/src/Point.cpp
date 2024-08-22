@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:07:12 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/08 21:17:05 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:19:16 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,7 @@ Point::Point()
 {
 }
 
-Point::Point(int a, int b)
-{
-	this->setX(Fixed(a).toFloat());
-	this->setY(Fixed(b).toFloat());
-}
-
-Point::Point(int a, float b)
-{
-	this->setX(Fixed(a).toFloat());
-	this->setY(Fixed(b).toFloat());
-}
-
-Point::Point(float a, int b)
-{
-	this->setX(Fixed(a).toFloat());
-	this->setY(Fixed(b).toFloat());
-}
-
-Point::Point(float a, float b)
+Point::Point(const float a, const float b)
 {
 	this->setX(Fixed(a).toFloat());
 	this->setY(Fixed(b).toFloat());

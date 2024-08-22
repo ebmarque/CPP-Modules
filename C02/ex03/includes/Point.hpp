@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 15:01:12 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/08 21:16:53 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:19:47 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ public:
 	Point();
 	~Point();
 
-	Point(int a, int b);
-	Point(int a, float b);
-	Point(float a, int b);
-	Point(float a, float b);
+	Point(const float a, const float b);
 	Point(const Point &ref);
 
 	Point &operator=(const Point &ref);
