@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:19:08 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/08 21:48:44 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:26:55 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ bool bsp(const Point a, const Point b, const Point c, const Point point)
 
 int main()
 {
-	_header(true);
+	
 	// Test case 1: Points form a triangle, point lies inside the triangle
 	Point a(0, 0);
 	Point b(4, 0);
@@ -82,7 +82,7 @@ int main()
 	Point point(2, 2);
 	bool result = bsp(a, b, c, point);
 	std::cout << "Test case 1: " << (result ? "Passed" : "Failed <Point Outside>") << std::endl;
-
+	
 	// Test case 2: Points form a triangle, point lies outside the triangle
 	Point a2(0, 0);
 	Point b2(4, 0);
@@ -90,15 +90,15 @@ int main()
 	Point point2(5, 5);
 	bool result2 = bsp(a2, b2, c2, point2);
 	std::cout << "Test case 2: " << (!result2 ? "Passed" : "Failed <Point Outside>") << std::endl;
-
+	
 	// Test case 3: Points form a line, point lies on the line
 	Point a3(0, 0);
 	Point b3(2, 2);
 	Point c3(4, 4);
 	Point point3(3, 3);
 	bool result3 = bsp(a3, b3, c3, point3);
-	std::cout << "Test case 3: " << (result3 ? "Passed" : "Failed <Point Outside>") << std::endl;
-
+	std::cout << "Test case 3: " << (!result3 ? "Passed" : "Failed <Point Outside>") << std::endl;
+	
 	// Test case 4: Points form a line, point does not lie on the line
 	Point a4(0, 0);
 	Point b4(2, 2);
@@ -106,22 +106,29 @@ int main()
 	Point point4(5, 5);
 	bool result4 = bsp(a4, b4, c4, point4);
 	std::cout << "Test case 4: " << (!result4 ? "Passed" : "Failed <Point Outside>") << std::endl;
-
+	
 	// Test case 5: Points form a triangle, point is one of the vertices
 	Point a5(0, 0);
 	Point b5(4, 0);
 	Point c5(2, 4);
 	Point point5(4, 0);
 	bool result5 = bsp(a5, b5, c5, point5);
-	std::cout << "Test case 5: " << (result5 ? "Passed" : "Failed <Point Outside>") << std::endl;
-
+	std::cout << "Test case 5: " << (!result5 ? "Passed" : "Failed <Point Outside>") << std::endl;
+	
 	// Test case 6: Points form a triangle, point is on one of the edges
 	Point a6(0, 0);
 	Point b6(4, 0);
 	Point c6(2, 4);
 	Point point6(2, 0);
 	bool result6 = bsp(a6, b6, c6, point6);
-	std::cout << "Test case 6: " << (result6 ? "Passed" : "Failed <Point Outside>") << std::endl;
-
-	return 0;
+	std::cout << "Test case 6: " << (!result6 ? "Passed" : "Failed <Point Outside>") << std::endl;
+	
+	// Test case 6: Points form a triangle, point is on one of the edges
+	Point a7(-3, 3);
+	Point b7(2, -3);
+	Point c7(-2, -3);
+	Point point7(0, -2.9);
+	bool result7 = bsp(a7, b7, c7, point7);
+	std::cout << "Test case 7: " << (result7 ? "Passed" : "Failed <Point Outside>") << std::endl;
+	return (0);
 }
