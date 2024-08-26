@@ -6,7 +6,7 @@
 #    By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 11:43:00 by ebmarque          #+#    #+#              #
-#    Updated: 2024/04/12 13:09:43 by ebmarque         ###   ########.fr        #
+#    Updated: 2024/08/26 15:09:24 by ebmarque         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = src/main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -Wno-shadow
 
 all: $(NAME)
 

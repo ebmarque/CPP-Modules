@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:38:12 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/11 14:36:08 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/26 14:33:18 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,14 @@ public:
 	ClapTrap &operator=(const ClapTrap &ref);
 	~ClapTrap();
 
-	void attack(const std::string &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
-	void status(void);
+	std::string	getName(void) const;
+	int			getHealth(void) const;
+	int			getAttackDamage(void) const;
+	int			getEnergy(void) const;
+	void 		attack(const std::string &target);
+	void 		takeDamage(unsigned int amount);
+	void 		beRepaired(unsigned int amount);
+	void 		status(void);
 };
 
 #endif
