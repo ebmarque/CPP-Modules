@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 10:58:30 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/26 15:06:27 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/26 16:25:49 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ ClapTrap::ClapTrap(std::string n)
 
 ClapTrap::ClapTrap(const ClapTrap &ref)
 {
+	// std::cout << "I HAVE ONLY BE CALLED BY THE COPY WITH THE NAME REF: " << ref.name << std::endl;
 	this->name = ref.name;
 	this->energy = ref.energy;
 	this->health = ref.health;

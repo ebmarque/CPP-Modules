@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:19:08 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/22 17:26:55 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/29 13:24:34 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ bool bsp(const Point a, const Point b, const Point c, const Point point)
 
 int main()
 {
-	
 	// Test case 1: Points form a triangle, point lies inside the triangle
 	Point a(0, 0);
 	Point b(4, 0);

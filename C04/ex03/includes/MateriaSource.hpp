@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/19 11:06:31 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 15:52:55 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:41:15 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class MateriaSource : public IMateriaSource
 {
 	protected:
-		AMateria *materials[4];
+		AMateria 	*materials[4];
 
 	public:
 		MateriaSource();

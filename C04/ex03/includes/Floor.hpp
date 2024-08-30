@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:19:09 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 18:10:33 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:33:09 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef	struct s_DropedMateria
 } t_DropedMateria;
 
 
+
 class Floor
 {
 	private:
@@ -35,5 +36,6 @@ class Floor
 		static Floor&	getInstace(void);
 		void			addFront(AMateria* m);
 };
+
 
 #endif

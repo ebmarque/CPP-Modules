@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:15:51 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 15:53:13 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:41:18 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,6 @@ AMateria * MateriaSource::createMateria(std::string const &type)
         if(this->materials[i] && this->materials[i]->getType() == type)
             return (materials[i]->clone());
     }
+	print("[MATERIASOURCE]: Has not learned " + type + " yet.", RED);
     return (NULL);
 }

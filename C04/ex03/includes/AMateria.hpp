@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:50:01 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 13:34:07 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:48:57 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class AMateria
 {
 	protected:
 		std::string type;
+		bool		_taken;
 	public:
 		AMateria();
 		AMateria(std::string const &t);
@@ -54,6 +55,9 @@ class AMateria
 		virtual AMateria* clone(void) const = 0;
 		virtual void use(ICharacter &target);	
 		virtual ~AMateria();
+		bool	isTaken(void) const;
+		void 	setTaken(bool value);
+
 };
 
 void print(std::string text, std::string COLOR);

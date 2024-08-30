@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:11:26 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 20:36:50 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:51:37 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ Character::Character(void)
 	this->name = "Undefined";
 	print("[" + this->name + "]: Default constructor called.", YELLOW);
 	for (size_t i = 0; i < 4; i++)
-		this->inventory[i] = NULL;	
+		this->inventory[i] = NULL;
 }
 
 Character::Character(std::string n)
 {
 	this->name = n;
 	for (size_t i = 0; i < 4; i++)
-		this->inventory[i] = NULL;	
+		this->inventory[i] = NULL;
 	print("[" + this->name + "]: Created.", YELLOW);
 }
 
@@ -61,11 +61,25 @@ Character &Character::operator=(const Character &ref)
 
 void Character::equip(AMateria *m)
 {
+	for (size_t i = 0; i < 4; i++)
+	{
+		if (inventory[i] == m)
+		{
+			print("[" + this->name + "]: Cannot equip an already possessed material.", RED);
+			return ;
+		}
+	}
+	if (m->isTaken())
+	{
+		print("[" + this->name + "]: Tried to equip a material that belongs to someone else.", RED);
+		return;
+	}
 	for (int i = 0; i < 4; i++)
 	{
 		if (this->inventory[i] == NULL && m != NULL)
 		{
 			this->inventory[i] = m;
+			m->setTaken(true);
 			print("[" + this->name + "]: Equiped -> " + m->getType() + ".", YELLOW);
 			return;
 		}
@@ -75,6 +89,7 @@ void Character::equip(AMateria *m)
 		print("[" + this->name + "]: Could not equip " + m->getType() + ".", YELLOW);
 		Floor::dropMateria(m);
 	}
+	print("[" + this->name + "]: Tried to equip an unexistent material.", RED);
 }
 
 void Character::unequip(int idx)
@@ -83,7 +98,8 @@ void Character::unequip(int idx)
 	{
 		print("[" + this->name + "]: Drops " + this->inventory[idx]->getType() + ".", YELLOW);
 		Floor::dropMateria(this->inventory[idx]);
-		this->inventory[idx] = NULL;	
+		this->inventory[idx]->setTaken(false);
+		this->inventory[idx] = NULL;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:58:56 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/04/22 14:00:25 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 12:49:11 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,17 @@ AMateria::~AMateria()
 AMateria::AMateria()
 {
 	this->type = "Undefined";
-	print("[AMateria]: Default constructor called: created -> " + \
-		type + ".", BRIGHT_GREEN);
+	this->_taken = false;
+	print("[AMateria]: Default constructor called: created -> " +
+			  type + ".",
+		  BRIGHT_GREEN);
 }
 
 AMateria::AMateria(std::string const &t)
 {
 	print("[AMateria]: Given-type constructor called.", BRIGHT_GREEN);
 	this->type = t;
+	this->_taken = false;
 }
 
 AMateria::AMateria(const AMateria &ref)
@@ -59,3 +62,12 @@ void AMateria::use(ICharacter &target)
 	(void)target;
 }
 
+bool AMateria::isTaken(void) const
+{
+	return (_taken);
+}
+
+void AMateria::setTaken(bool value)
+{
+	_taken = value;
+}
