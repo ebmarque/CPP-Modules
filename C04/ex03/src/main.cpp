@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:14 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/30 16:29:40 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 18:09:32 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -187,9 +187,18 @@ void	unequipTests(void)
 
 int main()
 {
-	std::cout << "\033c";
-	// deepCopyTests();
-	// unequipTests();
-	subjectTests();
+	
+	try
+	{
+		std::cout << "\033c";
+		subjectTests();
+		// deepCopyTests();
+		// unequipTests();
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << CYAN << "\n\nException: " << RESET << e.what() << '\n';
+		std::cerr << RED << "YOU PROBABLY DID SOMETHING STUPID 😉" << RESET << std::endl;
+	}	
 	return 0;
 }

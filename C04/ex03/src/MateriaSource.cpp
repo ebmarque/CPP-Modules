@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/20 14:15:51 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/30 12:41:18 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 18:04:26 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	MateriaSource::learnMateria(AMateria *ref)
 
 AMateria * MateriaSource::createMateria(std::string const &type)
 {
-	print("[MATERIASOURCE]: createMateria mmember function called.", BLUE);
+	print("[MATERIASOURCE]: createMateria member function called.", BLUE);
 	for (int i = 0; i < 4; i++)
     {
         if(this->materials[i] && this->materials[i]->getType() == type)
