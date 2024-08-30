@@ -39,6 +39,17 @@
 		"sstream": "cpp",
 		"stdexcept": "cpp",
 		"system_error": "cpp",
-		"typeinfo": "cpp"
+		"typeinfo": "cpp",
+		"cstdarg": "cpp",
+		"array": "cpp",
+		"bit": "cpp",
+		"deque": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp",
+		"iterator": "cpp",
+		"numeric": "cpp",
+		"optional": "cpp",
+		"ranges": "cpp",
+		"span": "cpp"
 	}
 }

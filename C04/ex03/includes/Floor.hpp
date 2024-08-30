@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 16:19:09 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/30 12:33:09 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 16:46:46 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ class Floor
 		Floor(void);
 		~Floor(void);
 		
+		void			cleanFloor(AMateria *m, std::string name);
 		static void		dropMateria(AMateria *m);
 		static Floor&	getInstace(void);
+		static void		takeFromFloor(AMateria *m, std::string name); 
 		void			addFront(AMateria* m);
 };
 

@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 16:11:26 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/30 12:51:37 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 16:47:57 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void Character::equip(AMateria *m)
 	{
 		if (this->inventory[i] == NULL && m != NULL)
 		{
+			Floor::takeFromFloor(m, getName());
 			this->inventory[i] = m;
 			m->setTaken(true);
 			print("[" + this->name + "]: Equiped -> " + m->getType() + ".", YELLOW);

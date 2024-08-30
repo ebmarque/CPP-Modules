@@ -6,7 +6,7 @@
 /*   By: ebmarque <ebmarque@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:40:14 by ebmarque          #+#    #+#             */
-/*   Updated: 2024/08/30 12:52:39 by ebmarque         ###   ########.fr       */
+/*   Updated: 2024/08/30 16:29:40 by ebmarque         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ void	subjectTests(void)
 	AMateria* tmp;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
+	me->unequip(0);
 
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	// tmp = src->createMateria("cure");
+	// me->equip(tmp);
 	checked();
 
 	subTitle("Creating a new Character bob");
